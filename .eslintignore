@@ -1,4 +1,5 @@
 .git
+amplify-codegen-temp/models/models
 android
 ios
 node_modules
