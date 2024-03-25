@@ -1,21 +1,21 @@
 bracketSpacing: true
 importOrder:
-  - "^(react/(.*)$)|^(react$)"
-  - "^(next/(.*)$)|^(next$)"
-  - "<THIRD_PARTY_MODULES>"
-  - ""
-  - "^types$"
-  - "^@/env(.*)$"
-  - "^@/types/(.*)$"
-  - "^@/config/(.*)$"
-  - "^@/lib/(.*)$"
-  - "^@/hooks/(.*)$"
-  - "^@/components/ui/(.*)$"
-  - "^@/components/(.*)$"
-  - "^@/styles/(.*)$"
-  - "^@/app/(.*)$"
-  - ""
-  - "^[./]"
+  - '^(react/(.*)$)|^(react$)'
+  - '^(next/(.*)$)|^(next$)'
+  - '<THIRD_PARTY_MODULES>'
+  - ''
+  - '^types$'
+  - '^@/env(.*)$'
+  - '^@/types/(.*)$'
+  - '^@/config/(.*)$'
+  - '^@/lib/(.*)$'
+  - '^@/hooks/(.*)$'
+  - '^@/components/ui/(.*)$'
+  - '^@/components/(.*)$'
+  - '^@/styles/(.*)$'
+  - '^@/app/(.*)$'
+  - ''
+  - '^[./]'
 jsxSingleQuote: true
 semi: false
 singleQuote: true
@@ -24,4 +24,4 @@ trailingComma: none
 useTabs: false
 
 plugins:
-  - "@ianvs/prettier-plugin-sort-imports"
+  - '@ianvs/prettier-plugin-sort-imports'
