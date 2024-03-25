@@ -10,6 +10,14 @@
       "StackName": "amplify-dogestore-dev-151814",
       "StackId": "arn:aws:cloudformation:sa-east-1:576734120781:stack/amplify-dogestore-dev-151814/0cb26bd0-ead4-11ee-a98f-06883ecc2091",
       "AmplifyAppId": "d1mn1i8psqiilz"
+    },
+    "categories": {
+      "api": {
+        "dogestore": {}
+      },
+      "auth": {
+        "dogestore7a51d0b2": {}
+      }
     }
   }
 }
