@@ -1,9 +1,13 @@
-import { View } from 'react-native'
+import useProducts from '../../hooks/use-products'
+import Container from '../atoms/container'
+import ProductList from '../molecules/product-list'
 
 export default function HomeScreen() {
+  const products = useProducts()
+
   return (
-    <View
-      style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-    ></View>
+    <Container>
+      <ProductList products={products} />
+    </Container>
   )
 }

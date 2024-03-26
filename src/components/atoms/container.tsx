@@ -1,7 +1,11 @@
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
 
 export default function Container({ children }: { children: React.ReactNode }) {
-  return <SafeAreaView style={styles.container}>{children}</SafeAreaView>
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView>{children}</ScrollView>
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -9,6 +13,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     justifyContent: 'center',
-    padding: 16
+    padding: 16,
+    paddingVertical: 30
   }
 })
