@@ -3,6 +3,9 @@
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
   "AuthCognitoUserPoolId": {
-    "Fn::GetAtt": ["authdogestore9529fd5d", "Outputs.UserPoolId"]
+    "Fn::GetAtt": [
+      "authdogestore9529fd5d",
+      "Outputs.UserPoolId"
+    ]
   }
 }

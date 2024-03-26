@@ -1,13 +1,19 @@
 type Product @model @auth(rules: [{ allow: private }]) {
   id: ID!
   name: String!
+  price: Int!
   description: String!
   image: String!
-  category: Category @hasOne
+  category: Category! @hasOne
 }
 
 type Category @model @auth(rules: [{ allow: private }]) {
   id: ID!
   name: String!
+  products: [Product] @hasMany
+}
+
+type Cart @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
   products: [Product] @hasMany
 }
