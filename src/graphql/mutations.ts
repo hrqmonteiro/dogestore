@@ -2,11 +2,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../API";
+import * as APITypes from '../API'
+
 type GeneratedMutation<InputType, OutputType> = string & {
-  __generatedMutationInput: InputType;
-  __generatedMutationOutput: OutputType;
-};
+  __generatedMutationInput: InputType
+  __generatedMutationOutput: OutputType
+}
 
 export const createProduct = /* GraphQL */ `mutation CreateProduct(
   $input: CreateProductInput!
@@ -26,7 +27,7 @@ export const createProduct = /* GraphQL */ `mutation CreateProduct(
 ` as GeneratedMutation<
   APITypes.CreateProductMutationVariables,
   APITypes.CreateProductMutation
->;
+>
 export const updateProduct = /* GraphQL */ `mutation UpdateProduct(
   $input: UpdateProductInput!
   $condition: ModelProductConditionInput
@@ -45,7 +46,7 @@ export const updateProduct = /* GraphQL */ `mutation UpdateProduct(
 ` as GeneratedMutation<
   APITypes.UpdateProductMutationVariables,
   APITypes.UpdateProductMutation
->;
+>
 export const deleteProduct = /* GraphQL */ `mutation DeleteProduct(
   $input: DeleteProductInput!
   $condition: ModelProductConditionInput
@@ -64,4 +65,4 @@ export const deleteProduct = /* GraphQL */ `mutation DeleteProduct(
 ` as GeneratedMutation<
   APITypes.DeleteProductMutationVariables,
   APITypes.DeleteProductMutation
->;
+>

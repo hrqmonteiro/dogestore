@@ -2,13 +2,15 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../API";
-type GeneratedSubscription<InputType, OutputType> = string & {
-  __generatedSubscriptionInput: InputType;
-  __generatedSubscriptionOutput: OutputType;
-};
+import * as APITypes from '../API'
 
-export const onCreateProduct = /* GraphQL */ `subscription OnCreateProduct($filter: ModelSubscriptionProductFilterInput) {
+type GeneratedSubscription<InputType, OutputType> = string & {
+  __generatedSubscriptionInput: InputType
+  __generatedSubscriptionOutput: OutputType
+}
+
+export const onCreateProduct =
+  /* GraphQL */ `subscription OnCreateProduct($filter: ModelSubscriptionProductFilterInput) {
   onCreateProduct(filter: $filter) {
     id
     name
@@ -21,10 +23,11 @@ export const onCreateProduct = /* GraphQL */ `subscription OnCreateProduct($filt
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreateProductSubscriptionVariables,
-  APITypes.OnCreateProductSubscription
->;
-export const onUpdateProduct = /* GraphQL */ `subscription OnUpdateProduct($filter: ModelSubscriptionProductFilterInput) {
+    APITypes.OnCreateProductSubscriptionVariables,
+    APITypes.OnCreateProductSubscription
+  >
+export const onUpdateProduct =
+  /* GraphQL */ `subscription OnUpdateProduct($filter: ModelSubscriptionProductFilterInput) {
   onUpdateProduct(filter: $filter) {
     id
     name
@@ -37,10 +40,11 @@ export const onUpdateProduct = /* GraphQL */ `subscription OnUpdateProduct($filt
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnUpdateProductSubscriptionVariables,
-  APITypes.OnUpdateProductSubscription
->;
-export const onDeleteProduct = /* GraphQL */ `subscription OnDeleteProduct($filter: ModelSubscriptionProductFilterInput) {
+    APITypes.OnUpdateProductSubscriptionVariables,
+    APITypes.OnUpdateProductSubscription
+  >
+export const onDeleteProduct =
+  /* GraphQL */ `subscription OnDeleteProduct($filter: ModelSubscriptionProductFilterInput) {
   onDeleteProduct(filter: $filter) {
     id
     name
@@ -53,6 +57,6 @@ export const onDeleteProduct = /* GraphQL */ `subscription OnDeleteProduct($filt
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeleteProductSubscriptionVariables,
-  APITypes.OnDeleteProductSubscription
->;
+    APITypes.OnDeleteProductSubscriptionVariables,
+    APITypes.OnDeleteProductSubscription
+  >
