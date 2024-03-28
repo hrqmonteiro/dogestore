@@ -1,4 +1,12 @@
-![![alt text](image-1.png)](image.png)
+<img src="https://github.com/hrqmonteiro/dogestore/assets/17055027/03addcbf-59ac-4420-a2a5-a450c6d35858" width="200">
+<img src="https://github.com/hrqmonteiro/dogestore/assets/17055027/dd830302-9dad-4b36-bdfe-c24588fde5dd" width="200">
+<img src="https://github.com/hrqmonteiro/dogestore/assets/17055027/6d88b6d1-acec-4322-8a6d-1d2152f93dcd" width="200">
+<img src="https://github.com/hrqmonteiro/dogestore/assets/17055027/2e6cc107-a34e-43ea-bc4b-373260820696" width="200">
+<img src="https://github.com/hrqmonteiro/dogestore/assets/17055027/c225f506-557b-4da3-a8a1-d887fe7e4ee3" width="200">
+
+<br/>
+<br/>
+<br/>
 
 Aplicação DogeMart feita para processo seletivo da Hiskek.
 
