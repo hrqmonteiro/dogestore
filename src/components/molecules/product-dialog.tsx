@@ -3,19 +3,13 @@ import {
   Image,
   Pressable,
   StyleSheet,
-  View,
   type GestureResponderEvent
 } from 'react-native'
-import {
-  ActivityIndicator,
-  Button,
-  MD2Colors,
-  Snackbar,
-  Text
-} from 'react-native-paper'
+import { ActivityIndicator, Button, MD2Colors, Text } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/Feather'
 
 import Dialog from '../atoms/dialog'
+import Snack from '../atoms/snack'
 
 type ProductDialogProps = {
   visible: boolean
@@ -46,6 +40,10 @@ export default function ProductDialog({
   loading,
   setLoading
 }: ProductDialogProps) {
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+
   return (
     <Dialog visible={visible} setVisible={setVisible}>
       <Pressable onPress={onPress} style={styles.buttonContainer}>
@@ -93,19 +91,12 @@ export default function ProductDialog({
         </Text>
       </Button>
 
-      <View style={styles.snackContainer}>
-        <Snackbar
-          visible={showSnack}
-          onDismiss={() => setShowSnack(false)}
-          action={{
-            textColor: MD2Colors.blue500,
-            label: 'Ok',
-            onPress: () => setShowSnack(false)
-          }}
-        >
-          Adicionado com sucesso!
-        </Snackbar>
-      </View>
+      <Snack
+        visible={showSnack}
+        setVisible={setShowSnack}
+        text='Adicionado com sucesso!'
+        label='Ok'
+      />
     </Dialog>
   )
 }

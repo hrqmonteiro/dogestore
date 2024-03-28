@@ -18,26 +18,41 @@ export default function useProducts() {
     getUser()
   }, [])
 
-  useEffect(() => {
-    const client = generateClient({
-      authMode: 'userPool',
-      authToken: token
-    })
+  const client = generateClient({
+    authMode: 'userPool',
+    authToken: token
+  })
 
-    async function getProducts() {
-      try {
-        const listProducts = await client.graphql({
-          query: queries.listProducts
-        })
+  async function getProducts() {
+    try {
+      const listProducts = await client.graphql({
+        query: queries.listProducts
+      })
 
-        setProducts(listProducts.data.listProducts.items as [])
-      } catch (err) {
-        console.error(`Error listing products: `, err)
-      }
+      setProducts(listProducts.data.listProducts.items as [])
+    } catch (err) {
+      console.error(`Error listing products: `, err)
     }
+  }
 
+  async function getProductById(id: string) {
+    try {
+      const product = await client.graphql({
+        query: queries.getProduct,
+        variables: {
+          id
+        }
+      })
+
+      return product
+    } catch (err) {
+      console.error(`Error getting product: `, err)
+    }
+  }
+
+  useEffect(() => {
     getProducts()
   }, [token])
 
-  return { products }
+  return { products, getProductById }
 }

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { ActivityIndicator, MD2Colors } from 'react-native-paper'
 
@@ -29,7 +28,7 @@ export default function ProductList({
       ) : (
         <>
           {products.map((product) => (
-            <View key={product.id}>
+            <View style={styles.container} key={product.id}>
               <ProductCard
                 showSnack={showSnack}
                 setShowSnack={setShowSnack}
