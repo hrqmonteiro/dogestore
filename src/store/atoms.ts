@@ -1,5 +1,6 @@
 import { atomWithStorage, createJSONStorage } from 'jotai/utils'
 
+import type { CartItem } from '../utils/cart'
 import { clearAll, getItem, removeItem, setItem } from './storage'
 
 const atomWithMMKV = <T>(key: string, initialValue: T) =>
@@ -16,3 +17,4 @@ const atomWithMMKV = <T>(key: string, initialValue: T) =>
 
 export const authenticatedAtom = atomWithMMKV('authenticated', false)
 export const userAtom = atomWithMMKV('user', {})
+export const cartAtom = atomWithMMKV<CartItem[]>('cart', [])

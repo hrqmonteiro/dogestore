@@ -1,8 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { useAtom } from 'jotai/react'
+import { View } from 'react-native'
+import { Badge, MD2Colors } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/Feather'
 
-import { authenticatedAtom } from '../../store/atoms'
+import { authenticatedAtom, cartAtom } from '../../store/atoms'
+import { cartQuantity } from '../../utils/cart'
 import AccountScreen from '../screens/account'
 import CartScreen from '../screens/cart'
 import ConfirmSignUpScreen from '../screens/confirm'
@@ -14,6 +17,9 @@ const Tab = createBottomTabNavigator()
 
 export default function Router() {
   const [authenticated] = useAtom(authenticatedAtom)
+  const [cart] = useAtom(cartAtom)
+
+  const quantity = cartQuantity(cart)
 
   let tabs = [
     {
@@ -87,7 +93,28 @@ export default function Router() {
               fontWeight: '500'
             },
             tabBarIcon: ({ color }) => (
-              <Icon color={color} name={icon} size={22} />
+              <>
+                {name === 'Carrinho' ? (
+                  <View>
+                    <Badge
+                      visible={quantity > 0}
+                      style={{
+                        position: 'absolute',
+                        backgroundColor: MD2Colors.blue500,
+                        zIndex: 10,
+                        top: -10,
+                        left: 5,
+                        marginLeft: 10
+                      }}
+                    >
+                      {quantity}
+                    </Badge>
+                    <Icon color={color} name='shopping-cart' size={22} />
+                  </View>
+                ) : (
+                  <Icon color={color} name={icon} size={22} />
+                )}
+              </>
             )
           }}
           name={name}

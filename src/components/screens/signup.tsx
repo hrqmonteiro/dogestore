@@ -90,6 +90,8 @@ export default function SignOutScreen({ navigation }: SignOutScreenProps) {
       />
 
       <Button
+        buttonColor={MD2Colors.blue500}
+        textColor={MD2Colors.white}
         disabled={disabledButton}
         mode='contained'
         onPress={() => handleSignUp({ username, password, email: username })}

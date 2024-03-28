@@ -4,7 +4,7 @@ import { useAtom } from 'jotai/react'
 import { Alert, Pressable, Text, View } from 'react-native'
 
 import useUser from '../../hooks/use-user'
-import { authenticatedAtom, userAtom } from '../../store/atoms'
+import { authenticatedAtom, cartAtom, userAtom } from '../../store/atoms'
 
 type AccountScreenProps = {
   // eslint-disable-next-line
@@ -14,12 +14,14 @@ type AccountScreenProps = {
 export default function AccountScreen({ navigation }: AccountScreenProps) {
   const [, setAuthenticated] = useAtom(authenticatedAtom)
   const [, setUser] = useAtom(userAtom)
+  const [, setCart] = useAtom(cartAtom)
   const user = useUser()
 
   async function handleSignOut() {
     try {
       await signOut()
       setUser({})
+      setCart([])
       setAuthenticated(false)
     } catch (err) {
       Alert.alert('Erro:', `${err}`)

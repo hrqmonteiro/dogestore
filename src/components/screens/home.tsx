@@ -1,9 +1,16 @@
-import useProducts from '../../hooks/use-products'
 import Container from '../atoms/container'
-import ProductList from '../molecules/product-list'
+import Heading from '../atoms/heading'
+import ProductsHome from '../organisms/products-home'
 
 export default function HomeScreen() {
-  const products = useProducts()
-
-  return <ProductList products={products} />
+  return (
+    <Container>
+      <Heading
+        heading='DogeStore'
+        subheading='Seja bem vindo à melhor loja de cafés.'
+        tripleheading='Aqui você encontrará a melhor variedade e o menor preço.'
+      />
+      <ProductsHome />
+    </Container>
+  )
 }

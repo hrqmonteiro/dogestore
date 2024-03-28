@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { Button } from 'react-native-paper'
+import { Button, MD2Colors } from 'react-native-paper'
 
 type AuthFooterProps = {
   action: string
@@ -15,7 +15,7 @@ export default function AuthFooter({
   return (
     <View style={styles.container}>
       <Text>{heading}</Text>
-      <Button mode='text' onPress={onPress}>
+      <Button textColor={MD2Colors.blue500} mode='text' onPress={onPress}>
         {action}
       </Button>
     </View>

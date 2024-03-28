@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native'
-import { TextInput } from 'react-native-paper'
+import { MD2Colors, TextInput } from 'react-native-paper'
 
 type InputProps = {
   label: string
@@ -19,6 +19,10 @@ export default function Input({
   return (
     <View style={styles.input}>
       <TextInput
+        outlineColor={MD2Colors.blue200}
+        selectionColor={MD2Colors.blue500}
+        mode='outlined'
+        activeOutlineColor={MD2Colors.blue500}
         label={label}
         onChangeText={onChangeText}
         placeholder={placeholder}

@@ -39,5 +39,5 @@ export default function useProducts() {
     getProducts()
   }, [token])
 
-  return products
+  return { products }
 }

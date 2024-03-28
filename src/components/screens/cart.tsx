@@ -1,9 +1,12 @@
-import { Text, View } from 'react-native'
+import { Text } from 'react-native-paper'
+
+import Container from '../atoms/container'
+import Heading from '../atoms/heading'
 
 export default function CartScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Carrinho!</Text>
-    </View>
+    <Container>
+      <Heading heading='Carrinho' />
+    </Container>
   )
 }
