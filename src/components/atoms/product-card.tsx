@@ -1,7 +1,6 @@
 import { Card, Text } from 'react-native-paper'
 
 type ProductCardProps = {
-  onPress: (title: string) => void
   source: string | undefined
   subtitle: string
   text: string
@@ -9,14 +8,13 @@ type ProductCardProps = {
 }
 
 export default function ProductCard({
-  onPress,
   source,
   subtitle,
   text,
   title
 }: ProductCardProps) {
   return (
-    <Card onPress={() => onPress(title)}>
+    <Card>
       <Card.Cover source={{ uri: source }} />
       <Card.Title
         titleStyle={{ fontWeight: '700' }}

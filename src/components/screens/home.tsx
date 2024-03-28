@@ -5,9 +5,5 @@ import ProductList from '../molecules/product-list'
 export default function HomeScreen() {
   const products = useProducts()
 
-  return (
-    <Container>
-      <ProductList products={products} />
-    </Container>
-  )
+  return <ProductList products={products} />
 }
