@@ -51,8 +51,7 @@ yarn ios
 
 # Amplify
 
-- Instalar e configurar a AWS através do [awscli](https://aws.amazon.com/pt/
-  cli/)
+- Instalar e configurar a AWS através do [awscli](https://aws.amazon.com/pt/cli/)
 - Instalar o [Amplify CLI](https://docs.amplify.aws/javascript/tools/cli/start/set-up-cli/)
 
 - Configure seu usuário com o comando:
