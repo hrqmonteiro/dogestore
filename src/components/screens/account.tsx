@@ -1,17 +1,21 @@
 import { NavigationProp } from '@react-navigation/native'
 import { signOut } from 'aws-amplify/auth'
-import { useAtom } from 'jotai/react'
-import { Alert, Pressable, Text, View } from 'react-native'
+import { useAtom } from 'jotai'
+import { Alert, View } from 'react-native'
+import { Button, MD2Colors, Text } from 'react-native-paper'
 
 import useUser from '../../hooks/use-user'
 import { authenticatedAtom, cartAtom, userAtom } from '../../store/atoms'
+import Container from '../atoms/container'
+import Heading from '../atoms/heading'
+import AccountHeader from '../molecules/account-header'
 
-type AccountScreenProps = {
+type CartScreenProps = {
   // eslint-disable-next-line
   navigation: NavigationProp<any>
 }
 
-export default function AccountScreen({ navigation }: AccountScreenProps) {
+export default function AccountScreen({ navigation }: CartScreenProps) {
   const [, setAuthenticated] = useAtom(authenticatedAtom)
   const [, setUser] = useAtom(userAtom)
   const [, setCart] = useAtom(cartAtom)
@@ -31,11 +35,26 @@ export default function AccountScreen({ navigation }: AccountScreenProps) {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Pressable onPress={handleSignOut}>
-        <Text>signout</Text>
-      </Pressable>
-      <Text>{user?.signInDetails?.loginId}</Text>
-    </View>
+    <>
+      <Container>
+        <Heading heading='Conta' />
+
+        <AccountHeader
+          email={user.signInDetails?.loginId}
+          id={user.userId}
+          method={user.signInDetails?.authFlowType}
+        />
+      </Container>
+
+      <Button
+        onPress={handleSignOut}
+        mode='text'
+        style={{ marginVertical: 30, padding: 10, marginHorizontal: 6 }}
+      >
+        <Text style={{ color: MD2Colors.blue500, fontWeight: '700' }}>
+          Clique para sair da sua conta
+        </Text>
+      </Button>
+    </>
   )
 }
