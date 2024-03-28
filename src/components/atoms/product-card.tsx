@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import type { GestureResponderEvent } from 'react-native'
 import { Card, Text } from 'react-native-paper'
 
-import { Product } from '../../API'
 import ProductDialog from '../molecules/product-dialog'
 
 type ProductCardProps = {
